@@ -1,2 +1,4 @@
-package com.library.library.controller;public class NoFreeCopiesException {
+package com.library.library.controller;
+
+public class NoFreeCopiesException extends Exception{
 }

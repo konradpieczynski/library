@@ -27,4 +27,8 @@ public class GlobalHttpErrorHandler extends ResponseEntityExceptionHandler{
     public ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException exception){
         return new ResponseEntity<>("User with given id doesn't exist", HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler(NoFreeCopiesException.class)
+    public ResponseEntity<Object> handleNoFreeCopiesException(NoFreeCopiesException exception){
+        return new ResponseEntity<>("No free copies to rent", HttpStatus.BAD_REQUEST);
+    }
 }

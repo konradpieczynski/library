@@ -1,7 +1,10 @@
 package com.library.library.service;
 
 import com.library.library.controller.CopyOfBookNotFoundException;
+import com.library.library.controller.NoFreeCopiesException;
 import com.library.library.domain.CopyOfBook;
+import com.library.library.domain.Title;
+import com.library.library.domain.Status;
 import com.library.library.repository.CopyOfBookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -32,5 +35,14 @@ public class CopyOfBookDbService {
         {
             throw new CopyOfBookNotFoundException();
         }
+    }
+    public CopyOfBook getFreeCopyOfBook(Title title) throws NoFreeCopiesException {
+        List<CopyOfBook> freeCopies = repository.findByTitleAndStatus(title, Status.FREE);
+            if (freeCopies.size() > 0) {
+                return freeCopies.get(0);
+            }
+            else {
+                throw new NoFreeCopiesException();
+            }
     }
 }

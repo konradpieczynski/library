@@ -28,4 +28,10 @@ public class Rental {
 
     @Column(name = "return_date")
     private LocalDate returnDate;
+
+    public Rental(User user, CopyOfBook copyOfBook, LocalDate rentalDate) {
+        this.user = user;
+        this.copyOfBook = copyOfBook;
+        this.rentalDate = rentalDate;
+    }
 }

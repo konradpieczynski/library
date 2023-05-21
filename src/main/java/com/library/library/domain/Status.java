@@ -2,7 +2,8 @@ package com.library.library.domain;
 
 public enum Status {
     FREE("free"),
-    BORROWED("borrowed"),
+    UNAVAILABLE("unavailable"),
+    RENTED("rented"),
     DESTROYED("destroyed");
 
     private final String value;

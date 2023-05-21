@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class TitleMapper {
-    public Title mapToTask(final TitleDto titleDto) {
+    public Title mapToTitle(final TitleDto titleDto) {
         return new Title(
                 titleDto.getId(),
                 titleDto.getTitle(),
@@ -26,7 +26,7 @@ public class TitleMapper {
         );
     }
 
-    public List<TitleDto> mapToTaskDtoList(final List<Title> titleList) {
+    public List<TitleDto> mapToTitleDtoList(final List<Title> titleList) {
         return titleList.stream()
                 .map(this::mapToTitleDto)
                 .toList();

@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class UserMapper {
-    public User mapToTask(final UserDto userDto) {
+    public User mapToUser(final UserDto userDto) {
         return new User(
                 userDto.getId(),
                 userDto.getName(),
@@ -24,7 +24,7 @@ public class UserMapper {
         );
     }
 
-    public List<UserDto> mapToTaskDtoList(final List<User> userList) {
+    public List<UserDto> mapToUserDtoList(final List<User> userList) {
         return userList.stream()
                 .map(this::mapToUserDto)
                 .toList();
