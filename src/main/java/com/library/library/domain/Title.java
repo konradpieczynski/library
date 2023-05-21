@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 @Entity(name = "titles")
+@Table(uniqueConstraints = { @UniqueConstraint(name = "UniqueTitle", columnNames = { "title", "author", "publication_date"}) })
 public class Title {
     @Id
     @GeneratedValue
