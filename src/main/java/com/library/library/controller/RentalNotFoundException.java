@@ -1,4 +1,4 @@
 package com.library.library.controller;
 
-public class RentalNotFoundException {
+public class RentalNotFoundException extends Exception{
 }

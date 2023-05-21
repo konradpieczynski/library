@@ -1,4 +1,4 @@
 package com.library.library.controller;
 
-public class UserNotFoundException {
+public class UserNotFoundException extends Exception{
 }
